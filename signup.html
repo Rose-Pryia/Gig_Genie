@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GigGenie Signup</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<style>
+    button a{
+        text-decoration: none;
+        color:white;
+    }
+    .logo img{
+            width: 20px;
+            padding-right: 10px;
+        }
+        .logo{
+            justify-content: space-between;
+            display: flex;
+        }
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #400099;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+.nav-links{
+    display: flex;
+    flex-direction: row;
+}
+.profile {
+    display: flex;
+    align-items: center;
+}
+.icon {
+    margin-right: 5px;
+}
+
+/* Layout */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    gap: 20px;
+}
+.form-box {
+    background-color: #400099;
+    padding: 40px;
+    border-radius: 20px;
+    width: 350px;
+}
+.form-box h2 {
+    text-align: center;
+}
+label {
+    display: block;
+    font-size: 14px;
+    margin-top: 10px;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    margin-top: 5px;
+}
+button {
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+.image-box img {
+    width: 400px;
+    border-radius: 10px;
+}
+::-webkit-scrollbar {
+            width: 5px;
+            color: #000;
+            }
+            ::-webkit-scrollbar-thumb {
+                background: #400099;
+
+                }
+</style>
+<body>
+    <div class="navbar">
+        <div class="logo"><img src="picutes/logo.png">GigGenie</div>
+        <div class="nav-links">
+            <a href="greeting.html">About Us</a>
+            <a href="hiring.html">Find Job</a>
+            <a href="dashboard.html">Hire</a>
+            <a href="signup.html" class="profile">👤 ME</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form-box">
+            <h2>CREATE YOUR ACCOUNT</h2>
+            <form id="signup" style="display: none;">
+                <label>First Name</label>
+                <input type="text" placeholder="Enter your first name">
+                <label>Last Name</label>
+                <input type="text" placeholder="Enter your last name">
+                <label>Email</label>
+                <input type="text" placeholder="Enter your email">
+                <label>Phone No.</label>
+                <input type="text" placeholder="Enter your phone number">
+                <label>Password</label>
+                <input type="password" placeholder="Enter your password">
+                <button type="submit"><a href="hire_hiring.html">SIGN UP</a></button>
+            </form>
+
+            <form id="signin">
+                <label>Email</label>
+                <input type="text" placeholder="Enter your email">
+                <label>Password</label>
+                <input type="password" placeholder="Enter your password">
+                <button type="submit"><a href="hire_hiring.html">LOGIN</a></button>
+            </form>
+
+            <button id="change" onclick="toggle()">Don't have an account?</button>
+        </div>
+
+        <div class="image-box">
+            <img src="picutes/signup-image.png" alt="GigGenie Community">
+        </div>
+    </div>
+
+    <script>
+        const signin = document.getElementById("signin");
+        const signup = document.getElementById("signup");
+        const btn = document.getElementById("change");
+
+        function toggle() {
+            if (signup.style.display === "none") {
+                signup.style.display = "block";
+                signin.style.display = "none";
+                btn.innerText = "Already have an account?";
+            } else {
+                signin.style.display = "block";
+                signup.style.display = "none";
+                btn.innerText = "Don't have an account?";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GigGenie - Job Details</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        hr{
+            width: 100%;
+        }
+        .profile-container {
+            width: 60%;
+            margin: 20px auto;
+            background-color: #0a0a44;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .profile-container img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 10px;
+            padding-right: 50px;
+        }
+        .profile-container h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .profile-container p {
+            margin: 5px 0;
+        }
+        .job-preferences {
+            margin-top: 15px;
+            text-align: left;
+            padding: 10px;
+            background-color: #000033;
+            border-radius: 5px;
+            font-size: 1.5em;
+        }
+        .job-preferences p {
+            margin: 5px 0;
+        }
+        .view-resume {
+            display: inline-block;
+            margin-top: 15px;
+            background-color: #3a0ca3;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .view-resume:hover {
+            background-color: #5a0fcf;
+        }
+        .personal{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-size: 1.5em;  
+            justify-content: space-evenly;
+        }
+        .logo img{
+            width: 20px;
+            padding-right: 10px;
+        }
+        .logo{
+            justify-content: space-between;
+            display: flex;
+        }
+        .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #400099;
+        padding: 15px 30px;
+    }   
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav-links a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            text-decoration: underline;
+        }
+        ::-webkit-scrollbar {
+            width: 5px;
+            color: #000;
+            }
+            ::-webkit-scrollbar-thumb {
+                background: #400099;
+
+                }
+    </style>
+</head>
+<body>
+    
+    <div class="navbar">
+        <div class="logo"><img src="picutes/logo.png">GigGenie</div>
+        <div class="nav-links">
+            <a href="dashboard.html">Back to Dashboard</a>
+        </div>
+    </div>  
+    <div class="profile-container">
+        <div class="personal">
+        <img src="picutes/profile-placeholder.png" alt="Profile Image">
+        <div class="personal_text">
+            <h2>Seira Banu</h2>
+            <p><strong>Phone Number:</strong> +1 234-567-8901</p>
+            <p><strong>Email:</strong> seira.banu@example.com</p>
+            <p><strong>Location:</strong> New York</p>
+            <p><strong>Age:</strong> 23</p>
+            <p><strong>Languages Spoken:</strong> English, Spanish</p>
+            </div>
+        </div>
+        <hr>
+
+        <div class="job-preferences">
+            <p><strong>Job Type:</strong> Software Development</p>
+            <p><strong>Availability:</strong> Monday - Friday (9 AM - 5 PM)</p>
+            <p><strong>Expected Pay:</strong> $70,000 - $90,000</p>
+            <p><strong>Willing to Relocate?</strong> Yes</p>
+        </div>
+
+        <a href="Rose_Pryia_Pius_Resume.pdf" class="view-resume">VIEW RESUME</a>
+    </div>
+</body>
+</html>

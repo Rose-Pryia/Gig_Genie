@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GigGenie - Hire Candidate</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<style>
+    /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0a0a0a;
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #4B0082;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Hire Form Container */
+.hire-form {
+    background: #1a1a1a;
+    padding: 30px;
+    max-width: 500px;
+    margin: 80px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    text-align: left;
+}
+
+/* Form Elements */
+.hire-form h2 {
+    text-align: center;
+    color: #ffffff;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+    background: #333;
+    color: white;
+}
+
+/* Submit Button */
+button {
+    background-color: #4B0082;
+    color: white;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #6200ea;
+}
+button a{
+    text-decoration: none;
+    color: white;
+}
+.logo img{
+            width: 20px;
+            padding-right: 10px;
+        }
+        .logo{
+            justify-content: space-between;
+            display: flex;
+        }
+        ::-webkit-scrollbar {
+            width: 5px;
+            color: #000;
+            }
+            ::-webkit-scrollbar-thumb {
+                background: #400099;
+
+                }
+</style>
+<body>
+    <div class="navbar">
+        <div class="logo"><img src="picutes/logo.png">GigGenie</div>
+        <div class="nav-links">
+            <a href="dashboard.html">Back to Dashboard</a>
+        </div>
+    </div>
+
+    <div class="hire-form">
+        <h2>Hire Seira Banu</h2>
+        <form action="submit_hire.php" method="POST">
+            <label for="company">Company Name:</label>
+            <input type="text" id="company" name="company" required><br>
+
+            <label for="position">Job Position:</label>
+            <input type="text" id="position" name="position" required><br>
+
+            <label for="salary">Offered Salary ($):</label>
+            <input type="number" id="salary" name="salary" required><br>
+
+            <label for="message">Additional Message:</label>
+            <textarea id="message" name="message" rows="4"></textarea><br>  
+
+            <button type="submit"><a href="dashboard.html">Submit Offer</a></button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Profile | GigGenie</title>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore-compat.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: #0c0c0c;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .profile-container {
+      background: #1a1a40;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .profile-container h1 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .profile-container p {
+      font-size: 16px;
+      color: #ccc;
+    }
+
+    .logout-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #400099;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .logout-btn:hover {
+      background-color: #5e00cc;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <h1>Welcome, <span id="userName">User</span>!</h1>
+    <p>Email: <span id="userEmail">loading...</span></p>
+    <button class="logout-btn" onclick="logout()">Log Out</button>
+  </div>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDd_IS1UuTI_KJifTxE0h8RA4_ES4_5oK8",
+      authDomain: "giggenie-2fd41.firebaseapp.com",
+      projectId: "giggenie-2fd41",
+      storageBucket: "giggenie-2fd41.appspot.com",
+      messagingSenderId: "1001005286154",
+      appId: "1:1001005286154:web:1922bff0731dd36374b0f3",
+      measurementId: "G-K7ZM5K2QNN"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    auth.onAuthStateChanged(user => {
+        if (user) {
+          document.getElementById('userEmail').textContent = user.email;
+          const name = user.displayName || user.email.split('@')[0];
+          document.getElementById('userName').textContent = name;
+        } else {
+          window.location.href = 'signup2.html';
+        }
+      });
+      
+
+
+    function logout() {
+      auth.signOut().then(() => {
+        window.location.href = 'signup2.html';
+      });
+    }
+  </script>
+</body>
+</html>
